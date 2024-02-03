@@ -118,8 +118,8 @@ Git хранит таблицу соответствий ```хеш → инфо�
 ```mermaid
 graph LR;
   untracked -- "git add" --> staged;
-  staged    -- "???"     --> tracked/comitted;
+  staged    -- "git commit"     --> tracked/comitted;
+  tracked/comitted -- "изменения" --> modified;
+  modified -- "git add" --> staged;
+  staged -- "изменения" --> modified;
 
-%% стрелка без текста для примера: 
-  A --> B;
-```
